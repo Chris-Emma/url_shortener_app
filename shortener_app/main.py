@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get('/')
 def read_root():
-    return "Welcome to my URL shortener"
+    return "Welcome to the URL shortener"
