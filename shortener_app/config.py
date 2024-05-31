@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     db_url: str = "sqlite:///./shortener.db"
 
     class Config:
+        """Enables pydantic to load environment variables from .env"""
         env_file = ".env"
 
 @lru_cache
