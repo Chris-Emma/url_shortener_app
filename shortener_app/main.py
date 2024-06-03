@@ -27,7 +27,7 @@ def read_root():
     return "Welcome to the URL shortener"
 
 @app.post("/url", response_model=schemas.URLInfo)
-def create_url(url: schemas.URLBase):
+def create_url(url: schemas.URLBase, db: Session = Depends(get_db)):
     """
     Endpoint to create shortened url
     Parameters:
