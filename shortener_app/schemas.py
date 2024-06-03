@@ -1,15 +1,18 @@
 from pydantic import BaseModel
 
 class URLBase(BaseModel):
-    target_url: str
+    """Schema representing base structure of url"""
+    target_url: str #url to be shortened
 
 class URL(URLBase):
-    is_active: bool
-    clicks: int
+    """Schema representing shortened url"""
+    is_active: bool #indicates whether the shortened url is active
+    clicks: int #takes count of the number of times the shortened url has been clicked
 
     class Config:
         orm_mode = True
 
 class URLInfo(URL):
-    url: str
-    admin_url: str
+    """Schema that shows detailed info on shortened url"""
+    url: str #shortened url
+    admin_url: str #admin url for managing shortened url
