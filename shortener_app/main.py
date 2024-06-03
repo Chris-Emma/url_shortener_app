@@ -1,7 +1,18 @@
+import secrets
 import validators
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.orm import Session
 
-from . import schemas
+from . import models, schemas
+from .database import SessionLocal, engine
+models.Base.metadata.create_all(bind=engine)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 app = FastAPI()
 """Instantiating the FastAPI app"""
