@@ -1,5 +1,4 @@
 from functools import lru_cache
-
 from pydantic import BaseSettings
 """pydantic uses type annotation to validate data and manage settings"""
 
@@ -14,7 +13,7 @@ class Settings(BaseSettings):
         """Enables pydantic to load environment variables from .env"""
         env_file = ".env"
 
-@lru_cache
+@lru_cache(maxsize=100)
 def get_settings() -> Settings:
     """Returns an instance of the Settings class
     - @lru_cache provides an option for caching"""

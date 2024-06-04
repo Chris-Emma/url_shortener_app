@@ -6,7 +6,7 @@ from .config import get_settings
 
 #create SQLAlchemy engine to connect to the database
 engine = create_engine(
-    get_settings.db_url, connect_args={"check_same_thread: False"}
+    get_settings().db_url, connect_args={"check_same_thread": False}
 )
 
 #create a session maker to generate databse sessions
