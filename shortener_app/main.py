@@ -99,7 +99,6 @@ def get_url_info(
         raise_not_found(request)
 
 def get_admin_info(db_url: models.URL) -> schemas.URLInfo:
-
     base_url = URL(get_settings().base_url)
     admin_endpoint = app.url_path_for(
         "administration info", secret_key=db_url.secret_key
