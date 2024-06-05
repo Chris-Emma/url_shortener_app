@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+}
+
+input[type="url"], input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+#result, #contactResult {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#about, #contact {
+    margin-top: 40px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+#shortenedUrl {
+    margin-top: 20px;
+}

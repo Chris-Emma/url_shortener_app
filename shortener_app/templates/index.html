@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <form id="urlForm">
+            <input type="url" name="original_url" id="originalUrl" placeholder="Enter URL" required>
+            <button type="submit">Shorten</button>
+        </form>
+        <div id="result"></div>
+        <div id="shortenedUrl" class="hidden">
+            <h2>Shortened URL</h2>
+            <p id="shortUrl"></p>
+            <h2>Admin URL</h2>
+            <p id="adminUrl"></p>
+        </div>
+
+        <div id="about">
+            <h2>About</h2>
+            <p>This is a simple URL shortener service built with FastAPI and Flask. It allows you to shorten long URLs and manage them with an admin interface.</p>
+        </div>
+
+        <div id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="contactResult"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
