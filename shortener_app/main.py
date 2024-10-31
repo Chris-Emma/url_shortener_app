@@ -1,5 +1,5 @@
 import validators
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FASTAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from starlette.datastructures import URL
@@ -17,10 +17,10 @@ def get_db():
         db.close()
 
 app = FastAPI()
-"""Instantiating the FastAPI app"""
+"""Instantiating the FastAPI ap"""
 
 def raise_bad_request(message):
-    """Raises an exception error if url provided isnt valid"""
+    """Raises an exception error if url provided is not valid"""
     raise HTTPException(status_code=400, detail=message)
 
 def raise_not_found(request):
