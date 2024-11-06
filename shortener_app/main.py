@@ -1,3 +1,5 @@
+#main.py
+
 import validators
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse
@@ -27,6 +29,7 @@ def raise_not_found(request):
     """Raises an exception if the requested url is not found"""
     message = f"URL '{request.url}' doesn't exist"
     raise HTTPException(status_code=404, detail=message)
+
 @app.get('/')
 def read_root():
     """Function that returns the '/' route"""
