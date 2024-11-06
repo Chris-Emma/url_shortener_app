@@ -6,7 +6,7 @@ from .config import get_settings
 
 #create SQLAlchemy engine to connect to the database
 engine = create_engine(
-    get_settings().db_url, connect_args={"check_same_thread": False}
+    get_settings().db_url, connect_args={"check_same_thread": False} #allows multithread interaction connections
 )
 
 #create a session maker to generate databse sessions
@@ -15,4 +15,4 @@ SessionLocal = sessionmaker(
 )
 
 #create a Base class for declarative class definitions
-Base = declarative_base()
+Base = declarative_base() #any ORM models that inherits from Base will be registered as a table in the db schema
